@@ -158,3 +158,4 @@ dmypy.json
 *.pkl
 
 results/generate_codes/
+networks/generator_yellow-stylegan2-config-f.pkl
