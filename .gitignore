@@ -154,3 +154,7 @@ dmypy.json
 
 .gitignore
 .idea/
+
+*.pkl
+
+results/generate_codes/

@@ -8,10 +8,12 @@ import dnnlib.tflib as tflib
 import pretrained_networks
 import os
 
+
 def text_save(file, data):  # save generate code, which can be modified to generate customized style
     for i in range(len(data[0])):
-        s = str(data[0][i])+'\n'
+        s = str(data[0][i]) + '\n'
         file.write(s)
+
 
 def generate_images(network_pkl, num, truncation_psi=0.5):
     print('Loading networks from "%s"...' % network_pkl)
@@ -39,7 +41,7 @@ def generate_images(network_pkl, num, truncation_psi=0.5):
         images = Gs.run(z, None, **Gs_kwargs)  # [minibatch, height, width, channel]
 
         # Save image
-        PIL.Image.fromarray(images[0], 'RGB').save(dnnlib.make_run_dir_path('results/'+str(i)+'.png'))
+        PIL.Image.fromarray(images[0], 'RGB').save(dnnlib.make_run_dir_path('results/' + str(i) + '.png'))
 
 
 def main():
@@ -50,6 +52,7 @@ def main():
     generate_num = 20  # 生成数量
 
     generate_images(network_pkl, generate_num)
+
 
 if __name__ == "__main__":
     main()
